@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'enquiries.apps.EnquiriesConfig',
     "corsheaders",
+    'django_filters',
 ]
 
 MIDDLEWARE = [

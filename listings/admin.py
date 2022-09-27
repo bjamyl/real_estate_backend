@@ -6,6 +6,6 @@ class ListingAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'title')
     list_filter = ('realtor',)
     list_editable = ('is_published',)
-    search_fields = ('title', 'description', 'address', 'city', 'region', 'price')
+    search_fields = ('title', 'description', 'address', 'city', 'region', 'price', 'id')
 
 admin.site.register(Listing, ListingAdmin)

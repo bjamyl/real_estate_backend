@@ -87,10 +87,11 @@ WSGI_APPLICATION = 'real_estate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'real_estate',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST' : 'localhost',
+        'PASSWORD': '7M8Wuh6q2dZm9Fu8Tfkb',
+        'HOST' : 'containers-us-west-20.railway.app',
+        'PORT': '5751',
     }
 }
 

@@ -8,7 +8,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 
 class ListingsView(APIView):
-    def get(self, request):
+    def get(self,):
         listings = Listing.objects.all()
         serializer = ListingsSerializer(listings, many=True)
         return Response(serializer.data)

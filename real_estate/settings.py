@@ -11,12 +11,16 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+import environ
 from pathlib import Path
 from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Initializing environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -90,11 +94,11 @@ WSGI_APPLICATION = 'real_estate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '7M8Wuh6q2dZm9Fu8Tfkb',
-        'HOST' : 'containers-us-west-20.railway.app',
-        'PORT': '5751',
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('dGPzi3BBa22LMYdWXksF'),
+        'HOST' : env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT'),
     }
 }
 
@@ -186,7 +190,7 @@ SIMPLE_JWT = {
 }
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'ds32cvke8',
-    'API_KEY': '982955586448349',
-    'API_SECRET': 'zIHgEfVBSvFRD6PPC34qIdowEN8'
+    'CLOUD_NAME': env('CLOUDINARY_NAME'),
+    'API_KEY': env('CLOUDINARY_API_KEY'),
+    'API_SECRET': env('CLOUDINARY_API_SECRET')
 }

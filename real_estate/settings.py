@@ -19,7 +19,7 @@ from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Initializing environment variables
-env = environ.Env()
+env = environ.Env( DEBUG=(bool, False))
 environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
